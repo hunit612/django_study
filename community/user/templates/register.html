@@ -1,50 +1,39 @@
-<html>
+{% extends "base.html" %}
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    
-    <link rel="stylesheet" href="/static/bootstrap.min.css" />
-    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-12 text-center">
-                <h1>회원가입</h1>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-12">
-                {{ error }}
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-12">
-                <form method="POST" action=".">
-                    {% csrf_token %}
-                    <div class="mb-3 form-group">
-                        <label for="username">사용자 이름</label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="사용자 이름">
-                    </div>
-                    <div class="mb-3 form-group">
-                        <label for="useremail">사용자 이메일</label>
-                        <input type="email" class="form-control" id="useremail" name="useremail" placeholder="사용자 email">
-                    </div>
-                    <div class="mb-3 form-group">
-                        <label for="password">비밀번호</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
-                    </div>
-                    <div class="mb-3 form-group">
-                        <label for="re-password">비밀번호 확인</label>
-                        <input type="password" class="form-control" id="re-password" name="re-password" placeholder="비밀번호 확인">
-                    </div>
-                    <button type="submit" class="btn btn-primary">회원가입</button>
-                </form>
-            </div>
-        </div>
+{% block contents %}
+<div class="row mt-5">
+    <div class="col-12 text-center">
+        <h1>회원가입</h1>
     </div>
-</body>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        {{ error }}
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <form method="POST" action=".">
+            {% csrf_token %}
+            <div class="mb-3 form-group">
+                <label for="username">사용자 이름</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="사용자 이름">
+            </div>
+            <div class="mb-3 form-group">
+                <label for="useremail">사용자 이메일</label>
+                <input type="email" class="form-control" id="useremail" name="useremail" placeholder="사용자 email">
+            </div>
+            <div class="mb-3 form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
+            </div>
+            <div class="mb-3 form-group">
+                <label for="re-password">비밀번호 확인</label>
+                <input type="password" class="form-control" id="re-password" name="re-password" placeholder="비밀번호 확인">
+            </div>
+            <button type="submit" class="btn btn-primary">회원가입</button>
+        </form>
+    </div>
+</div>
 
-</html>
+{% endblock %}
